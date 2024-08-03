@@ -1,0 +1,5 @@
+class Solution:
+    def sumOfThree(self, num: int) -> List[int]:
+       
+        avg=(num//3-1)
+        return [avg,avg+1,avg+2]if sum([avg,avg+1,avg+2])==num else []
