@@ -1,0 +1,18 @@
+
+class Solution:
+    def minimumPushes(self, word: str) -> int:
+        from collections import Counter
+        if len(set(word))<=8:return len(word)
+        else:
+            di=dict(sorted(Counter(word).items(),key=lambda item:item[1],reverse=True))
+            cost=0
+            pos=1
+            count=0
+            for i,j in di.items():
+                cost+=j*pos
+                count+=1
+                if count%8==0:pos+=1
+            return cost
+                
+                
+        
