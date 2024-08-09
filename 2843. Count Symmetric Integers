@@ -1,0 +1,10 @@
+class Solution:
+    def countSymmetricIntegers(self, low: int, high: int) -> int:
+        ans=0
+        for k in list(map(str,range(low,high+1))):
+            if len(k)%2==0:
+                l=len(k)//2
+                s1=sum(list(map(int,list(k[:l]))))
+                s2=sum(list(map(int,list(k[l:]))))
+                if s1==s2:ans+=1
+        return ans
